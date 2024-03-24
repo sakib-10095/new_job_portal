@@ -1,0 +1,30 @@
+{% block content %}
+
+{% if user.user_type == 'recruiter' %}
+
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="{% url "viewjobPage" %}">View Job</a>
+    <a href="{% url "addjobPage" %}">Add Job</a>
+    <a href="#">Profile</a>
+    <a href="{% url "logoutPage" %}">Logout</a>
+</div>
+
+
+
+{% elif user.user_type == 'jobseeker' %}
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="{% url "viewjobPage" %}">View Job</a>
+    <a href="#">Profile</a>
+    <a href="{% url "logoutPage" %}">Logout</a>
+</div>
+<h1>iam jobseeker {{user}}</h1>
+
+
+{% endif %}
+
+
+{% endblock content %}
